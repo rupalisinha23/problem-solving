@@ -59,6 +59,6 @@ class BinarySearchTree {
 
 var tree = new BinarySearchTree();
 tree.insert(10);
-tree.nsert(5);
+tree.insert(5);
 tree.insert(13);
 tree.insert(11);
