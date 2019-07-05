@@ -1,3 +1,7 @@
+"""
+Singly Linked List
+"""
+
 class Node:
    def __init__(self,value):
        self.val = value
@@ -68,8 +72,63 @@ class SinglyLinkedList:
         """
         if (pos < 0 or pos >= self.length):
             return None
-        
+        counter = 0
+        current = self.head
+        while counter != pos:
+            current = current.next
+            counter +=1
+        return current
 
+    def set(self, idx, value):
+        """
+        Changing the value at the provided index
+        """
+        foundNode = self.get(idx)
+        if (foundNode):
+            foundNode.val = value
+            return True
+        return False
+
+    def insert(self, index, val):
+        if (index < 0 or index > self.length):
+            return False
+        if(index == self.length):
+            return self.push(val)
+        if (index == 0):
+            return self.unshift(val)
+        newNode = Node(val)
+        prev = self.get(index-1)
+        temp = prev.next
+        prev.next = newNode
+        newNode.next = temp
+        self.length +=1
+        return True
+
+    def remove(self, idx):
+        if(idx < 0 or idx >= self.length):
+            return None
+        if(idx == 0):
+            return self.shift()
+        if(idx == self.length-1):
+            return self.pop()
+        prevNode = self.get(idx-1)
+        removed = prevNode.next
+        prevNode.next = removed.next
+        self.length -=1
+        return removed
+
+    def reverse(self):
+        node = self.head
+        self.head = self.tail
+        self.tail = node
+        prev = None
+        for i n range(self.length):
+            next = node.next
+            node.next = prev
+            prev = node
+            node = next
+
+        return self
 
 
 
