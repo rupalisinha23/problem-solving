@@ -39,3 +39,6 @@ class Queue:
         self.size -=1
 
         return temp.value
+
+queue = Queue()
+queue.enqueue(11)
