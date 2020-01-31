@@ -10,6 +10,7 @@ This repository contains the solutions of some of the common interview questions
 
 | File Name | Description |
 | --- | --- |
+| DLL | Doubly Linked List and its operations. |
 | atoi (string to integer) | https://leetcode.com/problems/string-to-integer-atoi/ |
 | bst | Bubble Sort |
 | common_elements | Return the common elements in two sorted arrays of unknown length. |
